@@ -14,16 +14,19 @@ return new class extends Migration
         Schema::create('sales_reports', function (Blueprint $table) {
             $table->id();
             $table->date('date')->nullable();
-            $table->string('customerName')->unique();
+            $table->bigInteger('customerName')->unsigned()->nullable();
             $table->string('Referances')->nullable();
             $table->string('status')->nullable();
-             $table->string('payment')->nullable();
-             $table->integer('Total')->nullable();
-             $table->string('paid')->nullable();
-             $table->date('due')->nullable();
-             $table->string('Biller')->nullable();
+            $table->string('payment')->nullable();
+            $table->integer('Total')->nullable();
+            $table->string('paid')->nullable();
+            $table->date('due')->nullable();
+            $table->string('Biller')->nullable();
             $table->timestamps();
+            $table->foreign('customerName')->references('id')->on('customers')->onDelete('cascade');
         });
+
+        
     }
 
     /**

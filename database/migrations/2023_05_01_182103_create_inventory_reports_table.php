@@ -13,15 +13,21 @@ return new class extends Migration
     {
         Schema::create('inventory_reports', function (Blueprint $table) {
             $table->id();
-            $table->string('productName')->nullable();
+            $table->bigInteger('productName')->unsigned()->nullable();
             $table->string('sku')->nullable();
-            $table->string('categoryName')->nullable();
-            $table->integer('brandName')->nullable();
+            $table->bigInteger('categoryName')->unsigned()->nullable();
+            $table->bigInteger('brandName')->unsigned()->nullable();
             $table->integer('price')->nullable();
             $table->string('unit')->nullable();
             $table->integer('InstockQnty')->nullable();
              
             $table->timestamps();
+
+            $table->foreign('categoryName')->references('id')->on('categories')->onDelete('cascade');
+
+            $table->foreign('productName')->references('id')->on('products')->onDelete('cascade');
+
+            $table->foreign('brandName')->references('id')->on('brands')->onDelete('cascade');
         });
     }
 

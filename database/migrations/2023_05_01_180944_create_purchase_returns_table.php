@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('image');
             $table->date('date')->nullable();
-            $table->string('supplier')->nullable();
+            $table->bigInteger('supplierName')->unsigned()->nullable();
             $table->string('reference')->nullable();
             $table->string('status')->nullable();
              $table->integer('GrandTotal')->nullable();
@@ -24,6 +24,8 @@ return new class extends Migration
              $table->string('paymentStatus')->nullable();
 
             $table->timestamps();
+
+            $table->foreign('supplierName')->references('id')->on('suppliers')->onDelete('cascade');
         });
     }
 

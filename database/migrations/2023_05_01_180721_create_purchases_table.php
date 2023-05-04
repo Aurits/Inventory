@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
-            $table->string('SupplierName')->unique();
+            $table->bigInteger('SupplierName')->unsigned()->nullable();
             $table->string('References')->unique();
             $table->date('date')->nullable();
             $table->string('status')->nullable();
@@ -23,6 +23,8 @@ return new class extends Migration
              $table->string('paymentStatus')->nullable();
              
             $table->timestamps();
+
+            $table->foreign('SupplierName')->references('id')->on('suppliers')->onDelete('cascade');
         });
     }
 

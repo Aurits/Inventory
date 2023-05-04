@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             
             $table->string('invoiceNumber')->unique();
-            $table->string('customerName')->unique();
+            $table->bigInteger('customerName')->unsigned()->nullable();
             $table->date('DueDate')->nullable();
             $table->integer('amount')->nullable();
              $table->integer('paid')->nullable();
@@ -23,6 +23,8 @@ return new class extends Migration
              $table->string('status')->nullable();
              
             $table->timestamps();
+
+            $table->foreign('customerName')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 

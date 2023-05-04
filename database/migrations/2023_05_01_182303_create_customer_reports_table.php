@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('customer_reports', function (Blueprint $table) {
             $table->id();
-            $table->integer('customerCode')->unique();
-            $table->string('customerName')->nullable();
+            $table->bigInteger('customerName')->unsigned()->nullable();
             $table->integer('amount')->nullable();
             $table->integer('paid')->nullable();
             $table->integer('amountDue')->nullable();
@@ -22,6 +21,8 @@ return new class extends Migration
              $table->string('paumentStatus')->nullable();
              
             $table->timestamps();
+
+            $table->foreign('customerName')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 

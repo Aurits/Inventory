@@ -13,13 +13,17 @@ return new class extends Migration
     {
         Schema::create('quotations', function (Blueprint $table) {
             $table->id();
-            $table->string('productName')->unique();
+            $table->bigInteger('productName')->unsigned()->nullable();
             $table->string('References')->unique();
-            $table->date('CustomerName')->nullable();
+            $table->bigInteger('CustomerName')->unsigned()->nullable();
             $table->string('status')->nullable();
              $table->integer('GrandTotal')->nullable();
             
             $table->timestamps();
+
+            $table->foreign('productName')->references('id')->on('products')->onDelete('cascade');
+
+            $table->foreign('CustomerName')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->date('date')->nullable();
-            $table->string('customerName')->unique();
+            $table->bigInteger('customerName')->unsigned()->nullable();
             $table->string('Referances')->nullable();
             $table->string('status')->nullable();
              $table->string('payment')->nullable();
@@ -23,6 +23,7 @@ return new class extends Migration
              $table->date('due')->nullable();
              $table->string('Biller')->nullable();
             $table->timestamps();
+            $table->foreign('customerName')->references('id')->on('customers')->onDelete('cascade');
         });
     
     }

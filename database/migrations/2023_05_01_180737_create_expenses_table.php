@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
-            $table->string('CategoryName')->unique();
+            $table->bigInteger('CategoryName')->unsigned()->nullable();
             $table->string('References')->unique();
             $table->date('date')->nullable();
             $table->string('status')->nullable();
@@ -21,6 +21,8 @@ return new class extends Migration
              $table->text('description')->nullable();
 
             $table->timestamps();
+
+            $table->foreign('CategoryName')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

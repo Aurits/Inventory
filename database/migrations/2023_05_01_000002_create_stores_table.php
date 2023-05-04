@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('stores', function (Blueprint $table) {
             $table->id();
-            
-            $table->string('customerName')->nullable();
-            $table->string('code')->unique();
+            $table->string('storeName')->unique();
+            $table->bigInteger('StoreLocation')->unsigned()->nullable();
             $table->integer('phone')->unique();
-            $table->email('email')->unique();
-             $table->string('country')->nullable();
-             
-
+            $table->string('email')->unique();
+             $table->string('status')->nullable();
             $table->timestamps();
+
+            $table->foreign('StoreLocation')->references('id')->on('states')->onDelete('cascade');
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('stores');
     }
 };

@@ -15,12 +15,16 @@ return new class extends Migration
             $table->id();
             $table->date('date')->nullable();
             $table->string('References')->nullable();
-            $table->date('from')->nullable();
-            $table->string('paid')->nullable();
+            $table->bigInteger('from')->unsigned()->nullable();
+            $table->bigInteger('paid')->unsigned()->nullable();
             $table->integer('item')->nullable();
              $table->integer('GrandTotal')->nullable();
             
             $table->timestamps();
+
+            $table->foreign('paid')->references('id')->on('stores')->onDelete('cascade');
+
+            $table->foreign('from')->references('id')->on('stores')->onDelete('cascade');
         });
     }
 

@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('purchase_orders', function (Blueprint $table) {
             $table->id();
-            $table->string('productName')->unique();
+            $table->bigInteger('productName')->unsigned()->nullable();
             $table->integer('purchasedAmount')->nullable();
             $table->integer('purchasedQnty')->nullable();
             $table->integer('instockQnty')->nullable();
              
             $table->timestamps();
+
+            $table->foreign('productName')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

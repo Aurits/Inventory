@@ -13,16 +13,25 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
             $table->string('name')->unique();
             $table->string('SKU');
-            $table->string('category_id')->unsigned()->nullable();
-            $table->string('Brand')->nullable();
+            $table->bigInteger('category_id')->unsigned()->nullable();
+            $table->bigInteger('Brand_id')->unsigned()->nullable();
             $table->string('unit')->nullable();
             $table->decimal('price',8,2);
-            $table->unsignedInteger('Qty')->default(10);
+            $table->unsignedInteger('MainStore')->default(0);
+            $table->unsignedInteger('Store2')->default(0);
+            $table->unsignedInteger('Store3')->default(0);
+            $table->bigInteger('MainStore_id')->unsigned()->nullable();;
+            $table->bigInteger('Store2_id')->unsigned()->nullable();;
+            $table->bigInteger('Store3_id')->unsigned()->nullable();;
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('brands_id')->references('id')->on('brands')->onDelete('cascade');
+            $table->foreign('Brand_id')->references('id')->on('brands')->onDelete('cascade');
+            $table->foreign('MainStore_id')->references('id')->on('stores')->onDelete('cascade');
+            $table->foreign('Store2_id')->references('id')->on('stores')->onDelete('cascade');
+            $table->foreign('Store3_id')->references('id')->on('stores')->onDelete('cascade');
         });
     }
 
