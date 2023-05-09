@@ -165,23 +165,23 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class="active">
-                            <a href="index.html"><img src="{{ asset('assets/img/icons/dashboard.svg')}}" alt="img"><span>
+                            <a href="{{ route('dashboard')}}"><img src="{{ asset('assets/img/icons/dashboard.svg')}}" alt="img"><span>
                                     Dashboard</span> </a>
                         </li>
                         <li class="submenu">
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/product.svg')}}" alt="img"><span>
                                     Product</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="productlist.html">Product List</a></li>
-                                <li><a href="categorylist.html">Category List</a></li>
-                                <li><a href="brandlist.html">Brand List</a></li>
+                                <li><a href="{{ route('product.list')}}">Product List</a></li>
+                                <li><a href="{{ route('category.list')}}">Category List</a></li>
+                                <li><a href="{{ route('brand.list')}}">Brand List</a></li>
                             </ul>
                         </li>
                         <li class="submenu">
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/sales1.svg')}}" alt="img"><span>
                                     Sales</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="pos.html">POS</a></li>
+                                <li><a href="{{ route('pos')}}">POS</a></li>
 
                             </ul>
                         </li>
@@ -189,7 +189,7 @@
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/purchase1.svg')}}" alt="img"><span>
                                     Purchase</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="purchaselist.html">Purchase List</a></li>
+                                <li><a href="{{ route('purchase.list')}}">Purchase List</a></li>
                             </ul>
                         </li>
 
@@ -199,9 +199,9 @@
                                     Places</span> <span class="menu-arrow"></span></a>
                             <ul>
 
-                                <li><a href="countrieslist.html">Countries list</a></li>
+                                <li><a href="{{ route('country.list')}}">Countries list</a></li>
 
-                                <li><a href="statelist.html">State list</a></li>
+                                <li><a href="{{ route('state.list')}}">State list</a></li>
                             </ul>
                         </li>
                        
@@ -209,15 +209,15 @@
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/product.svg')}}" alt="img"><span>
                                     Application</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="chat.html">Chat</a></li>
-                                <li><a href="email.html">Email</a></li>
+                                <li><a href="{{ route('chat')}}">Chat</a></li>
+                                <li><a href="{{ route('email')}}">Email</a></li>
                             </ul>
                         </li>
                         <li class="submenu">
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/time.svg')}}" alt="img"><span>
                                     Report</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="purchasereport.html">Purchase Report</a></li>
+                                <li><a href="{{ route('purchase.report')}}">Purchase Report</a></li>
 
                             </ul>
                         </li>
@@ -242,7 +242,7 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class="active">
-                            <a href="index.html"><img src="{{ asset('assets/img/icons/dashboard.svg')}}" alt="img"><span>
+                            <a href="{{ route('dashboard')}}"><img src="{{ asset('assets/img/icons/dashboard.svg')}}" alt="img"><span>
                                     Dashboard</span> </a>
                         </li>
                         <li class="submenu">
@@ -393,24 +393,24 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class="active">
-                            <a href="index.html"><img src="{{ asset('assets/img/icons/dashboard.svg')}}" alt="img"><span>
+                            <a href="{{ route('dashboard')}}"><img src="{{ asset('assets/img/icons/dashboard.svg')}}" alt="img"><span>
                                     Dashboard</span> </a>
                         </li>
                         <li class="submenu">
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/product.svg')}}" alt="img"><span>
                                     Product</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="productlist.html">Product List</a></li>
-                                <li><a href="addproduct.html">Add Product</a></li>
-                                <li><a href="categorylist.html">Category List</a></li>
-                                <li><a href="addcategory.html">Add Category</a></li>
+                                <li><a href="{{ route('product.list')}}">Product List</a></li>
+                                <li><a href="{{ route('add.product')}}">Add Product</a></li>
+                                <li><a href="{{ route('category.list')}}">Category List</a></li>
+                                <li><a href="{{ route('add.category')}}">Add Category</a></li>
                             </ul>
                         </li>
                         <li class="submenu">
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/sales1.svg')}}" alt="img"><span>
                                     Sales</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="saleslist.html">Sales List</a></li>
+                                <li><a href="{{ route('sales.list')}}">Sales List</a></li>
                             </ul>
                         </li>
 
@@ -419,22 +419,23 @@
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/return1.svg')}}" alt="img"><span>
                                     Return</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="salesreturnlist.html">Sales Return List</a></li>
-                       
+                                <li><a href="{{ route('sales.return')}}">Sales Return List</a></li>
+                            </ul>
+                        </li>                       
                         <li class="submenu">
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/product.svg')}}" alt="img"><span>
                                     Application</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="chat.html">Chat</a></li>
-                                <li><a href="calendar.html">Calendar</a></li>
-                                <li><a href="email.html">Email</a></li>
+                                <li><a href="{{ route('chat')}}">Chat</a></li>
+                                <li><a href="{{ route('calender')}}">Calendar</a></li>
+                                <li><a href="{{ route('email')}}">Email</a></li>
                             </ul>
                         </li>
                         <li class="submenu">
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/time.svg')}}" alt="img"><span>
                                     Report</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="salesreport.html">Sales Report</a></li>
+                                <li><a href="{{ route('sales.list')}}">Sales Report</a></li>
                                
                             </ul>
                         </li>

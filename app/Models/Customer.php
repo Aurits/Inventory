@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = [
+        'customerName',
+        'phone',
+        'email',
+        'country'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'customerName');
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }
