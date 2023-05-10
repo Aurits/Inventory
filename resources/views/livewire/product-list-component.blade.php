@@ -7,7 +7,7 @@
 <h6>Manage your products</h6>
 </div>
 <div class="page-btn">
-<a href="addproduct.html" class="btn btn-added"><img src="{{ asset('assets/img/icons/plus.svg')}}" alt="img" class="me-1">Add New Product</a>
+<a href="{{ route('add.product')}}" class="btn btn-added"><img src="{{ asset('assets/img/icons/plus.svg')}}" alt="img" class="me-1">Add New Product</a>
 </div>
 </div>
 
