@@ -74,6 +74,10 @@
 </div>
 </div>
 </div>
+
+                        @if(Session::has('message'))
+                            <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
+                        @endif
 <div class="col-lg-12">
 <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
 <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>

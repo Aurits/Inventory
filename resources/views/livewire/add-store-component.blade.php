@@ -15,37 +15,40 @@
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Store Name</label>
-<input type="text">
+<input type="text" wire:model="storeName">
 </div>
 </div>
+ <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>Store Location</label>
+                                <select wire:model="StoreLocation">
+@foreach($states as $state)
+<option value="{{ $state->id}}">{{$state->stateName}}</option>
+@endforeach
+                                </select>
+                            </div>
+                        </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
-<label>User Name</label>
-<input type="text">
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="form-group">
-<label>Password</label>
-<div class="pass-group">
-<input type="password" class=" pass-input">
-<span class="fas toggle-password fa-eye-slash"></span>
-</div>
+<label>Status</label>
+
+<input type="text" wire:model="status">
+
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Phone</label>
-<input type="text">
+<input type="text" wire:model="phone">
 </div>
 </div>
 <div class="col-lg-3 col-sm-6 col-12">
 <div class="form-group">
 <label>Email</label>
-<input type="text">
+<input type="text" wire:model="email">
 </div>
 </div>
-<div class="col-lg-12">
+<!-- <div class="col-lg-12">
 <div class="form-group">
 <label> Store Image</label>
 <div class="image-upload">
@@ -56,9 +59,14 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
+
+ @if(Session::has('message'))
+ <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
+ @endif
+
 <div class="col-lg-12">
-<a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
+<a href="javascript:void(0);" wire:click="createStore" class="btn btn-submit ">Submit</a>
 <a href="storelist.html" class="btn btn-cancel">Cancel</a>
 </div>
 </div>

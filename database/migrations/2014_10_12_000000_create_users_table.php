@@ -18,6 +18,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('utype')->default('USR')->comment('USR for normal users , ADM for the admin and SUP for the supplier');
+            $table->string('country');
+            $table->string('phone');
+            $table->string('status')->default('active');
             $table->rememberToken();
             $table->timestamps();
         });
