@@ -13,7 +13,8 @@ class Supplier extends Model
         'supplierName',
         'phone',
         'email',
-        'country'
+        'country',
+        'address',
     ];
 
     public function country()

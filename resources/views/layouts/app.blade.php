@@ -42,9 +42,9 @@
 </head>
 
 <body>
-    <div id="global-loader">
+    <!-- <div id="global-loader">
         <div class="whirly-loader"> </div>
-    </div>
+    </div> -->
 
     <div class="main-wrapper">
 
@@ -305,8 +305,8 @@
                             <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/return1.svg')}}" alt="img"><span>
                                     Return</span> <span class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="{{ route('add.transfer')}}">Sales Return List</a></li>
-                                <li><a href="{{ route('createsalesreturn.list')}}">Add Sales Return </a></li>
+                                <li><a href="{{ route('sales.return')}}">Sales Return List</a></li>
+                                <li><a href="{{ route('newsales.return')}}">Add Sales Return </a></li>
                                 <li><a href="{{ route('purchasereturn.list')}}">Purchase Return List</a></li>
                                 <li><a href="{{ route('addpurchasereturn.list')}}">Add Purchase Return </a></li>
                             </ul>

@@ -11,23 +11,30 @@ class Purchase extends Model
 
 
     protected $fillable = [
-        'SupplierName',
+        'supplierName',
+        'productName',
         'References',
         'date',
         'status',
-        'GrandTotal',
-        'paid',
+        'qty',
+        'store',
         'due',
-        'paymentStatus',
     ];
 
     public function supplier()
     {
-        return $this->belongsTo(Supplier::class, 'SupplierName');
+        return $this->belongsTo(Supplier::class, 'supplierName');
     }
 
-    public function purchaseItems()
+    public function product()
     {
-        return $this->hasMany(PurchaseItem::class);
+        return $this->belongsTo(Supplier::class, 'productName');
     }
+
+    public function store()
+    {
+        return $this->belongsTo(Supplier::class, 'storeName');
+    }
+
+   
 }

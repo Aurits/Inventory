@@ -2,46 +2,58 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Brand;
 use Livewire\Component;
 
 class AddProductComponent extends Component
 {
 
-    public $products;
     public $image;
     public $name;
     public $SKU;
-    public $category_id;
-    public $brand_id;
+    public $category;
+    public $brand;
     public $unit;
     public $price;
     public $mainStore;
-    public $store2;
-    public $store3;
-    public $mainStore_id;
-    public $store2_id;
-    public $store3_id;
-    public $selectedProductId;
+    public $store2 = 0;
+    public $store3 = 0;
+    
 
       public function createProduct()
     {
-        $validatedData = $this->validate([
-            'image' => 'required',
-            'name' => 'required',
-            'SKU' => 'required',
-            'category_id' => 'required',
-            'brand_id' => 'required',
-            'unit' => 'required',
-            'price' => 'required',
-            'mainStore' => 'required',
-            'store2' => 'required',
-            'store3' => 'required',
-            'mainStore_id' => 'required',
-            'store2_id' => 'required',
-            'store3_id' => 'required',
+        // $validatedData = $this->validate([
+        //     // 'image' => 'required',
+        //     'name' => 'required',
+        //     'SKU' => 'required',
+        //     'category' => 'required',
+        //     'brand' => 'required',
+        //     'unit' => 'required',
+        //     'price' => 'required',
+        //     'mainStore' => 'required',
+        //     'store2' => 'required',
+        //     'store3' => 'required',
+            
+        // ]);
+
+        // Product::create($validatedData);
+        Product::create([
+            'name' => $this->name,
+            'SKU' => $this->SKU,
+            'category_id' => $this->category,
+            'Brand_id' => $this->brand,
+             'unit' => $this->unit,
+             'price' => $this->price,
+             'MainStore' => $this->mainStore,
+             'Store2' => $this->store2,
+             'Store3' => $this->store3,
+
+            
         ]);
 
-        Product::create($validatedData);
+         return redirect()->back()->with('message', 'product added successfully');
 
         $this->resetForm();
     }
@@ -50,25 +62,24 @@ class AddProductComponent extends Component
 
      private function resetForm()
     {
-        $this->image = '';
         $this->name = '';
         $this->SKU = '';
-        $this->category_id = '';
-        $this->brand_id = '';
+        $this->category = '';
+        $this->brand = '';
         $this->unit = '';
         $this->price = '';
         $this->mainStore = '';
         $this->store2 = '';
         $this->store3 = '';
-        $this->mainStore_id = '';
-        $this->store2_id = '';
-        $this->store3_id = '';
-        $this->selectedProductId = null;
+       
     }
 
         
     public function render()
     {
-        return view('livewire.add-product-component');
+
+        $brands = Brand::orderBy('brandName','ASC')->get();
+        $categories = Category::orderBy('categoryName','ASC')->get();
+        return view('livewire.add-product-component',['categories'=>$categories , 'brands'=>$brands]);
     }
 }

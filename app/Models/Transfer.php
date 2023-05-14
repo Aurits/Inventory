@@ -15,8 +15,9 @@ class Transfer extends Model
         'References',
         'from',
         'paid',
-        'item',
-        'GrandTotal'
+        'qty',
+        'productName',
+        'status'
     ];
 
     public function paidStore()

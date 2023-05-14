@@ -31,8 +31,8 @@
                             </div>
 
                         </div>
-                         @if(Session::has('message'))
-                            <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
+                        @if(Session::has('message'))
+                        <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
                         @endif
                         <div class="col-lg-12">
                             <a wire:click="newCountry" href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>

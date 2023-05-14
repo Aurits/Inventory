@@ -29,7 +29,7 @@
                                 <textarea wire:model="description" class="form-control"></textarea>
                             </div>
                         </div>
-                       <!--  <div class="col-lg-12">
+                        <!--  <div class="col-lg-12">
                             <div class="form-group">
                                 <label>Product Image</label>
                                 <div class="image-upload">
@@ -43,7 +43,7 @@
                         </div> -->
 
                         @if(Session::has('message'))
-                            <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
+                        <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
                         @endif
                         <div class="col-lg-12">
                             <a wire:click="createCategory" href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>

@@ -4,23 +4,31 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Customer extends Model
 {
-    use HasFactory;
+   
 
 
     protected $fillable = [
-        'customerName',
+        'user_id',
         'phone',
+        'name',
         'email',
-        'country'
+        'country',
+        'address'
+
     ];
+     use HasFactory;
+
 
     public function user()
-    {
-        return $this->belongsTo(User::class, 'customerName');
-    }
+{
+    return $this->belongsTo(User::class, 'user_id');
+}
+
+    
 
     public function country()
     {

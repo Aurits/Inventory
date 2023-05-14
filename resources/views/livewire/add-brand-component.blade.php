@@ -20,7 +20,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea  wire:model="description" class="form-control"></textarea>
+                                <textarea wire:model="description" class="form-control"></textarea>
                             </div>
                         </div>
                         <!-- <div class="col-lg-12">
@@ -35,8 +35,8 @@
                                 </div>
                             </div>
                         </div> -->
-                         @if(Session::has('message'))
-                            <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
+                        @if(Session::has('message'))
+                        <div class="alert alert-success" role="alert">{{ Session::get('message')}}</div>
                         @endif
                         <div class="col-lg-12">
                             <a wire:click="createBrand" href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>

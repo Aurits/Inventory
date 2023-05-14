@@ -11,19 +11,30 @@ class PurchaseReturn extends Model
 
 
     protected $fillable = [
-        'image',
-        'date',
+        
         'supplierName',
-        'reference',
+        'productName',
+        'Reference',
+        'date',
         'status',
-        'GrandTotal',
-        'paid',
+        'qty',
+        'store',
         'due',
-        'paymentStatus',
     ];
 
-    public function supplier()
+   public function supplier()
     {
         return $this->belongsTo(Supplier::class, 'supplierName');
     }
+
+    public function product()
+    {
+        return $this->belongsTo(Supplier::class, 'productName');
+    }
+
+    public function store()
+    {
+        return $this->belongsTo(Supplier::class, 'storeName');
+    }
+
 }

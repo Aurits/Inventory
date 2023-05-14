@@ -65,83 +65,46 @@
                 </div>
 
                 <div class="row">
-                    
-                    <div class="col-lg-8 col-sm-12 col-12 d-flex m-auto">
-                        <div class="card flex-fill">
-                            <div class="card-header pb-0 d-flex justify-content-between align-items-center">
-                                <h4 class="card-title mb-0">Recently Added Products</h4>
-                                <div class="dropdown">
-                                    <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false"
-                                        class="dropset">
-                                        <i class="fa fa-ellipsis-v"></i>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li>
-                                            <a href="productlist.html" class="dropdown-item">Product List</a>
-                                        </li>
-                                        <li>
-                                            <a href="addproduct.html" class="dropdown-item">Product Add</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive dataview">
-                                    <table class="table datatable ">
-                                        <thead>
-                                            <tr>
-                                                <th>Sno</th>
-                                                <th>Products</th>
-                                                <th>Price</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product22.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">Apple Earpods</a>
-                                                </td>
-                                                <td>$891.2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product23.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">iPhone 11</a>
-                                                </td>
-                                                <td>$668.51</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product24.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">samsung</a>
-                                                </td>
-                                                <td>$522.29</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product6.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">Macbook Pro</a>
-                                                </td>
-                                                <td>$291.01</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+
+
+                    <div class="card-body">
+                        <h4 class="card-title">Products</h4>
+                        <div class="table-responsive dataview">
+                            <table class="table datatable ">
+                                <thead>
+                                    <tr>
+                                       
+                                        <th>Product Name</th>
+                                        <th>Product SKU</th>
+                                         <th>Price</th>
+                                        <th>Brand Name</th>
+                                         <th>Main Store</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     
+                                    @foreach ($latestProducts as $product)
+                                    <tr>
+                                        
+                                        <td><a>{{ $product->name}}</a></td>
+                                        <td class="productimgname">
+                                            
+                                            <a href="">{{ $product->SKU}}</a>
+                                        </td>
+                                        <td>{{ $product->price}}</td>
+                                        <td>{{ $product->Brand_id}}</td>
+                                        <td>{{ $product->MainStore}}</td>
+                                    </tr>
+                                    @endforeach
+                                  
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+                    
+                  
+
+
                 </div>
                 <div class="card mb-0">
                     <div class="card-body">
@@ -150,67 +113,30 @@
                             <table class="table datatable ">
                                 <thead>
                                     <tr>
-                                        <th>SNo</th>
-                                        <th>Product Code</th>
+                                        
                                         <th>Product Name</th>
-                                        <th>Brand Name</th>
-                                        <th>Category Name</th>
-                                        <th>Expiry Date</th>
+                                        <th>Product SKU</th>
+                                        <th>Price</th>
+                                        <th>Brand</th>
+                                        <th>QTY</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                   
+                                    @foreach ($latestProducts as $product)
                                     <tr>
-                                        <td>1</td>
-                                        <td><a href="javascript:void(0);">IT0001</a></td>
+                                        
+                                        <td><a href="javascript:void(0);">{{ $product->name}}</a></td>
                                         <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product2.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Orange</a>
+                                            
+                                            <a href="">{{ $product->SKU}}</a>
                                         </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>12-12-2022</td>
+                                        <td>{{ $product->price}}</td>
+                                        <td>{{ $product->Brand_id}}</td>
+                                        <td>{{ $product->MainStore}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td><a href="javascript:void(0);">IT0002</a></td>
-                                        <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product3.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Pineapple</a>
-                                        </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>25-11-2022</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td><a href="javascript:void(0);">IT0003</a></td>
-                                        <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product4.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Stawberry</a>
-                                        </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>19-11-2022</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td><a href="javascript:void(0);">IT0004</a></td>
-                                        <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product5.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Avocat</a>
-                                        </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>20-11-2022</td>
-                                    </tr>
+                                    @endforeach
+
                                 </tbody>
                             </table>
                         </div>
@@ -281,83 +207,45 @@
                 </div>
 
                 <div class="row">
-                  
-                    <div class="col-lg- 8col-sm-12 col-12 d-flex">
-                        <div class="card flex-fill">
-                            <div class="card-header pb-0 d-flex justify-content-between align-items-center">
-                                <h4 class="card-title mb-0">Recently Added Products</h4>
-                                <div class="dropdown">
-                                    <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false"
-                                        class="dropset">
-                                        <i class="fa fa-ellipsis-v"></i>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li>
-                                            <a href="productlist.html" class="dropdown-item">Product List</a>
-                                        </li>
-                                        <li>
-                                            <a href="addproduct.html" class="dropdown-item">Product Add</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive dataview">
-                                    <table class="table datatable ">
-                                        <thead>
-                                            <tr>
-                                                <th>Sno</th>
-                                                <th>Products</th>
-                                                <th>Price</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product22.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">Apple Earpods</a>
-                                                </td>
-                                                <td>$891.2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product23.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">iPhone 11</a>
-                                                </td>
-                                                <td>$668.51</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product24.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">samsung</a>
-                                                </td>
-                                                <td>$522.29</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product6.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">Macbook Pro</a>
-                                                </td>
-                                                <td>$291.01</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+
+
+                    <div class="card-body">
+                        <h4 class="card-title">Products</h4>
+                        <div class="table-responsive dataview">
+                            <table class="table datatable ">
+                                <thead>
+                                    <tr>
+                                       
+                                        <th>Product Name</th>
+                                        <th>Product SKU</th>
+                                         <th>Price</th>
+                                        <th>Brand Name</th>
+                                         <th>Main Store</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     
+                                    @foreach ($latestProducts as $product)
+                                    <tr>
+                                        
+                                        <td><a>{{ $product->name}}</a></td>
+                                        <td class="productimgname">
+                                            
+                                            <a href="">{{ $product->SKU}}</a>
+                                        </td>
+                                        <td>{{ $product->price}}</td>
+                                        <td>{{ $product->Brand_id}}</td>
+                                        <td>{{ $product->MainStore}}</td>
+                                    </tr>
+                                    @endforeach
+                                  
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+
+                  
+                   
                 </div>
                 
                 </div>
@@ -384,7 +272,7 @@
                                 <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>$<span class="counters" data-count="307144.00">$307,144.00</span></h5>
+                                <h5>$<span class="counters" data-count="307144.00">{{ $cpurchases}}</span></h5>
                                 <h6>Total Purchase Due</h6>
                             </div>
                         </div>
@@ -395,7 +283,7 @@
                                 <span><img src="assets/img/icons/dash2.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>$<span class="counters" data-count="4385.00">$4,385.00</span></h5>
+                                <h5>$<span class="counters" data-count="4385.00">{{ $csales}}</span></h5>
                                 <h6>Total Sales Due</h6>
                             </div>
                         </div>
@@ -406,8 +294,8 @@
                                 <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>$<span class="counters" data-count="385656.50">385,656.50</span></h5>
-                                <h6>Total Sale Amount</h6>
+                                <h5>$<span class="counters" data-count="385656.50">{{ $cproducts}}</span></h5>
+                                <h6>Total Product Amount</h6>
                             </div>
                         </div>
                     </div>
@@ -417,15 +305,15 @@
                                 <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>$<span class="counters" data-count="40000.00">400.00</span></h5>
-                                <h6>Total Sale Amount</h6>
+                                <h5>$<span class="counters" data-count="40000.00">{{ $cusers}}</span></h5>
+                                <h6>Total Users</h6>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count">
                             <div class="dash-counts">
-                                <h4>100</h4>
+                                <h4>{{ $ccustomers}}</h4>
                                 <h5>Customers</h5>
                             </div>
                             <div class="dash-imgs">
@@ -436,7 +324,7 @@
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count das1">
                             <div class="dash-counts">
-                                <h4>100</h4>
+                                <h4>{{ $csuppliers}}</h4>
                                 <h5>Suppliers</h5>
                             </div>
                             <div class="dash-imgs">
@@ -447,8 +335,8 @@
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count das2">
                             <div class="dash-counts">
-                                <h4>100</h4>
-                                <h5>Purchase Invoice</h5>
+                                <h4>{{ $cstores}}</h4>
+                                <h5>Stores</h5>
                             </div>
                             <div class="dash-imgs">
                                 <i data-feather="file-text"></i>
@@ -458,8 +346,8 @@
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count das3">
                             <div class="dash-counts">
-                                <h4>105</h4>
-                                <h5>Sales Invoice</h5>
+                                <h4>{{ $ccountries}}</h4>
+                                <h5>Countries</h5>
                             </div>
                             <div class="dash-imgs">
                                 <i data-feather="file"></i>
@@ -509,7 +397,7 @@
                     <div class="col-lg-5 col-sm-12 col-12 d-flex">
                         <div class="card flex-fill">
                             <div class="card-header pb-0 d-flex justify-content-between align-items-center">
-                                <h4 class="card-title mb-0">Recently Added Products</h4>
+                                <h4 class="card-title mb-0">Recent Users</h4>
                                 <div class="dropdown">
                                     <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false"
                                         class="dropset">
@@ -517,11 +405,12 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <li>
-                                            <a href="productlist.html" class="dropdown-item">Product List</a>
+                                            <a href="{{ route('users.list')}}" class="dropdown-item">User List</a>
                                         </li>
                                         <li>
-                                            <a href="addproduct.html" class="dropdown-item">Product Add</a>
+                                            <a href="{{ route('new.user')}}" class="dropdown-item">User Add</a>
                                         </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -530,52 +419,25 @@
                                     <table class="table datatable ">
                                         <thead>
                                             <tr>
-                                                <th>Sno</th>
-                                                <th>Products</th>
-                                                <th>Price</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product22.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">Apple Earpods</a>
-                                                </td>
-                                                <td>$891.2</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product23.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">iPhone 11</a>
-                                                </td>
-                                                <td>$668.51</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product24.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">samsung</a>
-                                                </td>
-                                                <td>$522.29</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="assets/img/product/product6.jpg" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">Macbook Pro</a>
-                                                </td>
-                                                <td>$291.01</td>
-                                            </tr>
+
+
+                                     @foreach ($latestUsers as $latestUser)
+                                    <tr>
+                                        
+                                        <td>{{ $latestUser->name}}</td>
+                                        <td>{{ $latestUser->email}}</td>
+                                        <td>{{ $latestUser->status}}</td>
+                                        <td>{{ $latestUser->phone}}</td>
+                                    </tr>
+                                    @endforeach
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -585,72 +447,35 @@
                 </div>
                 <div class="card mb-0">
                     <div class="card-body">
-                        <h4 class="card-title">Expired Products</h4>
+                        <h4 class="card-title">Products</h4>
                         <div class="table-responsive dataview">
                             <table class="table datatable ">
                                 <thead>
                                     <tr>
-                                        <th>SNo</th>
-                                        <th>Product Code</th>
+                                       
                                         <th>Product Name</th>
+                                        <th>Product SKU</th>
+                                         <th>Price</th>
                                         <th>Brand Name</th>
-                                        <th>Category Name</th>
-                                        <th>Expiry Date</th>
+                                         <th>Main Store</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                     
+                                    @foreach ($latestProducts as $product)
                                     <tr>
-                                        <td>1</td>
-                                        <td><a href="javascript:void(0);">IT0001</a></td>
+                                        
+                                        <td><a>{{ $product->name}}</a></td>
                                         <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product2.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Orange</a>
+                                            
+                                            <a href="">{{ $product->SKU}}</a>
                                         </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>12-12-2022</td>
+                                        <td>{{ $product->price}}</td>
+                                        <td>{{ $product->Brand_id}}</td>
+                                        <td>{{ $product->MainStore}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td><a href="javascript:void(0);">IT0002</a></td>
-                                        <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product3.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Pineapple</a>
-                                        </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>25-11-2022</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td><a href="javascript:void(0);">IT0003</a></td>
-                                        <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product4.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Stawberry</a>
-                                        </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>19-11-2022</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td><a href="javascript:void(0);">IT0004</a></td>
-                                        <td class="productimgname">
-                                            <a class="product-img" href="productlist.html">
-                                                <img src="assets/img/product/product5.jpg" alt="product">
-                                            </a>
-                                            <a href="productlist.html">Avocat</a>
-                                        </td>
-                                        <td>N/D</td>
-                                        <td>Fruits</td>
-                                        <td>20-11-2022</td>
-                                    </tr>
+                                    @endforeach
+                                  
                                 </tbody>
                             </table>
                         </div>

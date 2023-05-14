@@ -13,7 +13,7 @@ class SalesReport extends Model
     protected $fillable = [
         'date',
         'customerName',
-        'Referances',
+        'References',
         'status',
         'payment',
         'Total',

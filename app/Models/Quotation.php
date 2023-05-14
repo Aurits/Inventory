@@ -13,9 +13,12 @@ class Quotation extends Model
     protected $fillable = [
         'productName',
         'References',
-        'CustomerName',
+        'customer_id',
         'status',
-        'GrandTotal',
+        'amount',
+        'date',
+        'description',
+        'discount',
     ];
 
     public function product()
@@ -25,6 +28,6 @@ class Quotation extends Model
 
     public function customer()
     {
-        return $this->belongsTo(Customer::class, 'CustomerName');
+        return $this->belongsTo(Customer::class, 'customer_id');
     }
 }

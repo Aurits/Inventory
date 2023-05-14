@@ -10,20 +10,28 @@ class SalesReturn extends Model
     use HasFactory;
 
 
+    
     protected $fillable = [
-        'productName',
         'date',
         'customerName',
+        'storeName',
+        'reference',
         'status',
-        'GrandTotal',
-        'paid',
-        'due',
-        'paymentStatus',
+        'payment',
+        'Total',
+        'productName',
+        'quantity',
+        'biller',
     ];
 
-    public function product()
+     public function product()
     {
-        return $this->belongsTo(Product::class, 'productName');
+        return $this->belongsTo(Product::class, "productName" );
+    }
+
+     public function store()
+    {
+        return $this->belongsTo(Store::class, "storeName");
     }
 
     public function customer()

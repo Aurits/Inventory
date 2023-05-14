@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Brand;
 use Livewire\Component;
 
 class BrandListComponent extends Component
 {
     public function render()
     {
-        return view('livewire.brand-list-component');
+        $brands = Brand::orderBy('BrandName', 'ASC')->get();
+        return view('livewire.brand-list-component',['brands'=>$brands]);
     }
 }
