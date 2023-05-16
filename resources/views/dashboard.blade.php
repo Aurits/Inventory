@@ -272,7 +272,7 @@
                                 <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>$<span class="counters" data-count="307144.00">{{ $cpurchases}}</span></h5>
+                                <h5>$<span class="counters" data-count="{{ $cpurchases}}">{{ $cpurchases}}</span></h5>
                                 <h6>Total Purchase Due</h6>
                             </div>
                         </div>
@@ -283,7 +283,7 @@
                                 <span><img src="assets/img/icons/dash2.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>$<span class="counters" data-count="4385.00">{{ $csales}}</span></h5>
+                                <h5>$<span class="counters" data-count="{{ $csales}}">{{ $csales}}</span></h5>
                                 <h6>Total Sales Due</h6>
                             </div>
                         </div>
@@ -294,7 +294,7 @@
                                 <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>$<span class="counters" data-count="385656.50">{{ $cproducts}}</span></h5>
+                                <h5>$<span class="counters" data-count="{{ $cproducts}}">{{ $cproducts}}</span></h5>
                                 <h6>Total Product Amount</h6>
                             </div>
                         </div>
@@ -305,7 +305,7 @@
                                 <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5>$<span class="counters" data-count="40000.00">{{ $cusers}}</span></h5>
+                                <h5>$<span class="counters" data-count="{{ $cusers}}">{{ $cusers}}</span></h5>
                                 <h6>Total Users</h6>
                             </div>
                         </div>

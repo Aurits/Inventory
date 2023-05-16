@@ -12,6 +12,6 @@ class SupplierReportComponent extends Component
     {
         $customers = Customer::orderBy('name', 'ASC')->get();
         $sales = Sales::orderBy('payment', 'ASC')->get();
-        return view('livewire.sales-report-component',['customers'=>$customers,'sales'=>$sales]);
+        return view('livewire.supplier-report-component',['customers'=>$customers,'sales'=>$sales]);
     }
 }
